@@ -14,7 +14,6 @@ function App() {
     <>
         <Header/> 
         {openCart && <Basket/>  }
-        <Basket/>
 
     <Routes>
       <Route path="/" element={<Home/>}/>
