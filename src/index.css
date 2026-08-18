@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+
+:root {
+  --ivory: #FBF6EE;
+  --pine: #243426;
+  --pine-soft: #3E5142;
+  --peony: #DD5A80;
+  --peony-deep: #C24468;
+  --sage: #8DA684;
+  --sage-deep: #5E7A57;
+  --marigold: #E2A23B;
+  --font-fraunces: 'Fraunces', serif;
+  --font-manrope: 'Manrope', sans-serif;
+  
+  
+}
