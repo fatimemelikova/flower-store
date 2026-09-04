@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { AnemenoLogo } from "./AnemenoLogo";
 import { UrunData } from "./UrunData";
+import { addItemToBasket } from "./BasketSlicer";
+import { useDispatch } from "react-redux";
+
 
 function Urunler() {
+  const dispatch = useDispatch()
+  const [added , setAdded] = useState(null)
+  const handleBasket = (urun)=>{
+    dispatch(addItemToBasket(urun))
+    setAdded(urun.id)
+
+    setTimeout(() => {
+      setAdded(null)
+      
+    }, 1000);
+  }
   return (
     <div className="products">
       <div className="prod-wrapper">
@@ -27,7 +41,11 @@ function Urunler() {
                     <p>
                     <b className="product-price">{urun.fiyat}$</b>
                   </p>
-                  <button>Sebete ekle</button>
+                  {
+                    urun.stok > 0 ? added==urun.id ? <button className="eklendi-btn"> Eklendi</button> : <button className="ekle-btn" onClick={()=>handleBasket(urun) }  >Sepete ekle</button> : <button className="tukendi-btn" >Tukendi</button>
+                    
+                  }
+                
                   </div>
                   
                 </div>

@@ -5,26 +5,19 @@ import Urunler from "./Urunler";
 import Home from "./Home";
 import Basket from "./Basket";
 import { useSelector } from "react-redux";
-
-
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const openCart = useSelector((state)=>state.basket.openCart)
+  const openCart = useSelector((state) => state.basket.openCart);
   return (
     <>
-        <Header/> 
-        {openCart && <Basket/>  }
+      <Header />
+      <AnimatePresence>{openCart && <Basket />}</AnimatePresence>
 
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/products" element={<Urunler/>}/>
-
-
-    </Routes>
-
-   
-
-
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Urunler />} />
+      </Routes>
     </>
   );
 }

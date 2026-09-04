@@ -3,10 +3,13 @@ import { IoMenu } from "react-icons/io5";
 import { AnemenoLogo } from './AnemenoLogo.jsx'
 import { Link, Links } from 'react-router-dom';
 import { SlBasket } from "react-icons/sl";
+import { useDispatch, useSelector } from 'react-redux';
+import { changeOpencart } from './BasketSlicer.jsx';
 
 
 function Header() {
     const [ openmenu , setopenmenu]  = useState(false)
+    const dispatch = useDispatch()
   return (
     <header className={ openmenu ? "openmenu" : ""}>
         <div className="logo">
@@ -35,7 +38,7 @@ function Header() {
   </ul>
 </nav>
         </nav>
-        <button className='btn-siparis-ver' > <SlBasket size={15}/>Sepetım</button>
+        <button className='btn-siparis-ver' onClick={()=>dispatch(changeOpencart())} > <SlBasket size={15}/>Sepetım</button>
          
          <IoMenu onClick={() => setopenmenu(!openmenu)} className='menu' size={30} />
       

@@ -465,14 +465,26 @@ nav ul li a {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            button {
+            .ekle-btn {
               padding: 10px 20px;
               border: none;
               background-color: #d8567c;
               color: white;
               border-radius: 20px;
               font-weight: 600;
+              cursor: pointer;
               font-family: var(--font-manrope);
+            }
+            .tukendi-btn {
+               padding: 10px 20px;
+              font-family: var(--font-manrope);
+
+              border: none;
+               border-radius: 20px;
+              font-weight: 600;
+              background-color: rgb(215, 215, 215);
+              color: rgb(129, 128, 128);
+              cursor: not-allowed;
             }
           }
           .product-price {
@@ -566,27 +578,131 @@ nav ul li a {
   transform: translateY(-10px);
 }
 .basket-overlay {
+  top: 0;
   width: 100%;
-  z-index: 99;
+  z-index: 999;
   height: 100vh;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.37);
 }
 .basket {
   height: 100vh;
+  top: 0;
   width: 450px;
   right: 0;
-  z-index: 99;
+  z-index: 1000;
   position: fixed;
   background-color: #fbf6ee;
-  .basket-header{
+  .basket-header {
     display: flex;
-  padding: 30px 20px;
+    padding: 24px 20px;
 
     font-size: 17px;
     font-family: var(--font-fraunces);
     justify-content: space-between;
     align-items: center;
-    
   }
+  .basket-footer{
+    display: flex;
+    padding: 0 30px;
+    background-color: white;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    height: 150px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid rgba(157, 157, 157, 0.814);
+    p{
+      font-family: var(--font-manrope);
+    }
+    button{
+      border: none;
+      width: 380px;
+      height: 45px;
+      font-size: 17px;
+      text-align: center;
+      padding: 10px 5px;
+      background-color: #d8567c;
+      color: white;
+      font-family: var(--font-manrope);
+      font-weight: bold;
+      border-radius: 25px;
+    }
+  }
+    .basket-list{
+    max-height: 500px; 
+    padding: 0 20px;
+     overflow-y: auto; 
+     display: flex;
+     flex-direction: column;
+     gap: 10px ;
+  }
+}
+.basket-item {
+  border-bottom: 1px solid rgba(150, 150, 150, 0.445);
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  font-family: var(--font-manrope);
+  padding: 20px 10px;
+  font-weight: 600;
+  color: rgb(76, 75, 75);
+
+  .basketItem-art {
+    background-color: #d9eed3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+  }
+  .basketItem-content {
+    padding-right: 20px;
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+    flex: 1;
+
+    .price-box {
+      display: flex;
+      justify-content: space-between;
+      .count-box{
+        width: 80px;
+        background-color: #ffffff;
+        border-radius:30px;
+        justify-content: space-between;
+        border: 1px solid rgba(202, 199, 199, 0.248);
+        display: flex;
+        padding: 5px;
+         
+        button{
+          width: 20px;
+          border: none;
+          border-radius: 50%;
+          color: #5e7a57;
+          background-color: #c7e5cb;
+        }
+        
+
+      }
+    }
+    .stok-limit{
+      font-size: 13px;
+      font-weight: 500;
+      color: rgb(225, 150, 11);
+    }
+  }
+}
+.eklendi-btn{
+  background-color: rgb(72, 141, 62);
+  color: white;
+    padding: 10px 20px;
+              border: none;
+              border-radius: 20px;
+              font-weight: 600;
+              cursor: pointer;
+              font-family: var(--font-manrope);
 }
